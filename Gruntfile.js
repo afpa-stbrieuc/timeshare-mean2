@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         tasks: ['newer:jshint:all'],
       },
       jsTest: {
-        files: ['test/spec/{,*/}*.js'],
+        files: ['<%= project.appPublic %>/test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
@@ -209,10 +209,10 @@ module.exports = function(grunt) {
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-      html: ['<%= project.appPublic %>/{,*/}*.html'],
-      css: ['<%= project.appPublic %>/styles/{,*/}*.css'],
+      html: ['<%= project.distPublic %>/{,*/}*.html'],
+      css: ['<%= project.distPublic %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= project.appPublic %>']
+        assetsDirs: ['<%= project.distPublic %>']
       }
     },
 
@@ -223,7 +223,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= project.appPublic %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= project.appPublic %>/images'
+          dest: '<%= project.distPublic %>/images'
         }]
       }
     },
@@ -295,9 +295,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.',
-          dest: '<%= project.distApi %>',
-          src: ['<%= project.appApi %>/**']
+          cwd: '<%= project.appApi %>',
+          src: ['**'],
+          dest: '<%= project.distApi %>'
         },{
           expand: true,
           cwd: '<%= project.appPublic %>',
@@ -430,6 +430,7 @@ module.exports = function(grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'concat',
     'ngAnnotate',
     'copy:dist',
     'cdnify',
