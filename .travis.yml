@@ -15,3 +15,8 @@ install:
 - bower install
 script:
 - grunt
+# whitelist
+branches:
+  only:
+    - master
+    - gruntify
