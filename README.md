@@ -5,3 +5,9 @@
 `bower install` 
  - will load all dependencies required by grunt
 `npm install --dev` 
+
+##run
+`grunt serve`
+
+##build
+`grunt`
