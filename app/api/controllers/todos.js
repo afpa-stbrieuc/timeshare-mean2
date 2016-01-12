@@ -21,7 +21,8 @@ router.post('/', function(req, res) {
 	todo.save(function(err) {
 		if (err){
 			res.send(err);
-	}
+		}
+
 		res.json(201, todo);
 	});
 
@@ -43,13 +44,16 @@ router.get('/:todo_id', function(req, res) {
 // update the Todo with this id
 router.put('/:todo_id', function(req, res) {
 
-	if (req.params.todo_id === undefined) {return res.send(400,'todo id empty');}
+	if (req.params.todo_id === undefined){
+		return res.send(400,'todo id empty');
+	}
 
 	Todo.findById(req.params.todo_id, function(err, todo) {
 
 		if (err){
 			res.send(err);
 		}
+
 		todo.name = req.body.name;
 		todo.save(function(err) {
 			if (err){
@@ -61,7 +65,6 @@ router.put('/:todo_id', function(req, res) {
 	});	
 });
 
-// delete the Todo with this id
 router.del('/:todo_id', function(req, res) {
 
 	Todo.remove({
@@ -78,4 +81,4 @@ router.del('/:todo_id', function(req, res) {
 });
 
 
-module.exports = router
+module.exports = router;
