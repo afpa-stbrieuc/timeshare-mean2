@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/afpa-stbrieuc/timeshare-mean2.svg?branch=gruntify)](https://travis-ci.org/afpa-stbrieuc/timeshare-mean2)
+
 ##install
  - load node app dependencies in app/api
 `npm install --prefix app/api` 

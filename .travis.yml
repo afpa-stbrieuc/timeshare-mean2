@@ -20,3 +20,5 @@ branches:
   only:
     - master
     - gruntify
+notifications:
+  slack: afpa-dev-22:b6U2F36r33EG1VAhgRv3Cxqs
