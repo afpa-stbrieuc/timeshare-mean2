@@ -1,7 +1,7 @@
 var express = require('express')
   , router = express.Router();
 //static assets
-router.use(express.static(__dirname + '/../public'));
+router.use(express.static(__dirname + '/../../public'));
 
 router.use('/api/todos', require('./todos'));
 

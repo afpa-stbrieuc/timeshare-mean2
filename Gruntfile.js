@@ -78,7 +78,7 @@ module.exports = function(grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= project.appPublic %>/scripts/{,*/}*.js',
           '<%= project.appPublic %>/images/{,*/}*',
-          '<%= project.appApi %>/*.js'
+          '<%= project.appApi %>/**/*.js'
         ]
       },
 
