@@ -19,11 +19,11 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
 
 	var account = new Account(); // create a new instance of the Account model
-	account.name = req.body.name; // set the accounts name (comes from the request)
-	account.number: Number,
-	  balance: {type: Number, default: 120},
-	  users: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-	  active: Boolean
+	// set the accounts details (comes from the request)
+	account.number= req.body.number,
+	account.balance= req.body.balance,
+	account.user= req.body.user,
+	account.active= req.body.active;
 
 	account.save(function(err) {
 		if (err){
