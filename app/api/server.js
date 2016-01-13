@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(require('./controllers'));
-
+// app.use(require('./routing'));
 
 var server;
 

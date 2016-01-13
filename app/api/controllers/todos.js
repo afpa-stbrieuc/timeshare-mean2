@@ -1,3 +1,6 @@
+/**
+ * /api/todos/ controller node file
+ */
 var express = require('express');
 var router = express.Router();
 
@@ -62,7 +65,7 @@ router.put('/:todo_id', function(req, res) {
 });
 
 // delete the Todo with this id
-router.del('/:todo_id', function(req, res) {
+router.delete('/:todo_id', function(req, res) {
 
 	Todo.remove({
 		_id: req.params.todo_id
@@ -78,4 +81,4 @@ router.del('/:todo_id', function(req, res) {
 });
 
 
-module.exports = router
+module.exports = router;
