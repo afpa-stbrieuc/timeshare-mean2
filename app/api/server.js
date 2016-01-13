@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 // configure body parser so we can get http body data
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+//require will first load controllers/index.js
 app.use(require('./controllers'));
 
 
@@ -19,6 +19,7 @@ var server;
 
 app.boot = function(config){
 
+	console.log(config);
 
 	mongoose.connect(config.db.mongodb); // connect to our database
 
