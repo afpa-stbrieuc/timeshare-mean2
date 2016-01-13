@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //require will first load controllers/index.js
 app.use(require('./controllers'));
-
+// app.use(require('./routing'));
 
 var server;
 
