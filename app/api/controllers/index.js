@@ -4,6 +4,8 @@ var express = require('express')
 router.use(express.static(__dirname + '/../public'));
 
 router.use('/api/todos', require('./todos'));
+router.use('/api/annonces', require('./annonces'));
+//do the same for responses and serviceCategories
 
 router.get('/', function(req, res) {
   res.send('Home page');

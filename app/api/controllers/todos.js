@@ -68,7 +68,7 @@ router.put('/:todo_id', function(req, res) {
 });
 
 //delete the Todo with this id
-router.del('/:todo_id', function(req, res) {
+router.delete('/:todo_id', function(req, res) {
 
 	Todo.remove({
 		_id: req.params.todo_id
