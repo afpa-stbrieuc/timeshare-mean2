@@ -3,12 +3,9 @@
 ##install
  - go to project dir
  
- - load node app dependencies in app/api
-`npm install app/api/ --prefix app/api/` 
- - load all web libs required by the client in app/public
-`bower install` 
- - will load all dependencies required by grunt
-`npm install --dev` 
+- `npm install app/api/ --prefix app/api/` ( load node app dependencies in app/api )
+- `bower install` ( load all web libs required by the client in app/public )
+- `npm install --dev` ( will load all dependencies required by grunt )
 
 ##run
 `grunt serve`
