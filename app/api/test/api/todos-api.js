@@ -34,7 +34,7 @@ describe('Todos: api', function() {
 
 		request
 			.post('/api/todos')
-			.type('form')
+			.type('form') //this will simulate a post like a form
     		.send({ name: 'my todos 1' })
 			.expect(201)
 			.expect(function(res) {

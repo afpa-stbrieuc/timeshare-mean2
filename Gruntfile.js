@@ -122,7 +122,8 @@ module.exports = function(grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= project.appPublic %>/scripts/{,*/}*.js'
+        '<%= project.appPublic %>/scripts/{,*/}*.js',
+        '<%= project.appApi %>/{,*/}*.js'
       ],
       test: {
         options: {
@@ -425,6 +426,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'jshint',
     'clean:dist',
     'wiredep',
     'useminPrepare',
