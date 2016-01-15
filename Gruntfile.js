@@ -123,7 +123,7 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         '<%= project.appPublic %>/scripts/{,*/}*.js',
-        '<%= project.appApi %>/{,*/}*.js'
+        //'<%= project.appApi %>/{,*/}*.js'
       ],
       test: {
         options: {
