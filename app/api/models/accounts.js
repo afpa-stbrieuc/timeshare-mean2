@@ -8,7 +8,7 @@ var Schema       = mongoose.Schema;
 var AccountSchema   = new Schema({
 	  number: Number,
 	  balance: {type: Number, default: 120},
-	  users: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+	  users: String, //{ type: mongoose.Schema.Types.ObjectId, ref: 'User' },
 	  active: Boolean
 });
 
