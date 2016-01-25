@@ -26,4 +26,4 @@ angular.module('mytodoApp', [
       DIALOGS_OK: 'OK'
     });
 
-  }]);
+  }],  ['ngAudio']);
