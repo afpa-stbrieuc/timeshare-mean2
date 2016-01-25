@@ -3,11 +3,6 @@
 angular.module('mytodoApp')
   .controller('MainCtrl', function($scope, Todo, dialogs) {
 
-    $scope.options = {
-  playlist: ['/sounds/Mecano-Hijo-de-la-luna.mp3', '/sounds/Mecano-Hijo-de-la-luna.mp3'],
-  loop: true
-};
-
     //fetch all todos'
     $scope.todos = Todo.query(
       function() {},
