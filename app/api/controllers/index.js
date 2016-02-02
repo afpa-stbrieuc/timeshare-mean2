@@ -7,6 +7,7 @@ router.use(express.static(__dirname + '/../../public'));
 router.use('/api/accounts', require('./accounts'));
 router.use('/api/todos', require('./todos'));
 router.use('/api/announces', require('./announces'));
+router.use('/api/users', require('./users'));
 //do the same for responses and serviceCategories
 
 router.get('/', function(req, res) {
