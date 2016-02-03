@@ -93,7 +93,7 @@ body {
   transition-timing-function: ease;
   color:#E1332D;
   border: 0 solid;
-  margin-right: 5px;
+  margin-right: 15px;
   margin-left: 5px;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
   outline: 1px solid;
@@ -167,4 +167,19 @@ a {
 a:hover {
   padding: 0 1px 1px 1px;
   color: #ffad99;
+}
+
+#logo {
+  height: 80px;
+}
+
+.navbar-header {
+  float: none!Important;
+}
+
+#btn-group-right {
+  float:right; 
+  margin-top: 8px;
+  margin-right: 15px;
+  padding-top: 6px;
 }
