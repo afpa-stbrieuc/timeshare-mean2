@@ -1,26 +1,12 @@
 'use strict';
 
-angular.module('timeShareApp', ['ngRoute'])
-	.config(['$routeProvider', '$locationProvider',
-		function($routeProvider, $locationProvider){
+angular.module('mytodoApp').config(['$routeProvider', function($routeProvider){
     $routeProvider
       .when('/', {
         templateUrl: 'views/ts-landing-page.html',
-        controller: 'MainCtrl',
-        controllerAs:'main'
-      })
-      .when('/who-we-are', {
-      	templateUrl: 'who-we-are.html',
-      	controller: 'UsCtrl', 
-      	controllerAs: 'us'
+        controller: 'MainCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-      $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-      });
-      }]);
-      
-
+  }]);

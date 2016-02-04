@@ -1,6 +1,6 @@
 'use strict';
 //register all modules
-angular.module('timeShareApp', [
+angular.module('mytodoApp', [
   'ngRoute',
   'ngCookies',
   'ngResource',
@@ -26,4 +26,4 @@ angular.module('timeShareApp', [
       DIALOGS_OK: 'OK'
     });
 
-  }]);
+  }],  ['ngAudio']);
