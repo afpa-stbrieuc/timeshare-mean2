@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<html class="timeShareApp">
+<html class="mytodoApp">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -19,9 +19,10 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fira+Sans:400italic">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100">
+    <link rel="stylesheet" type="text/css" href="https://github.com/darul75/ng-audio/blob/master/dist/css/ng-audio.min.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="timeShareApp">
+  <body ng-app="mytodoApp">
     
 
     <!--[if lt IE 7]>
@@ -30,7 +31,7 @@
     
 
     <!-- Add your site or application content here -->
-    <div class="view-animate-container" ng-view class="view-animate"></div>
+    <div class="container" ng-view=""></div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -57,7 +58,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/routes.js"></script>
         <script src="scripts/resources.js"></script>
-        <script src="scripts/controllers/mainCtrl.js"></script>
+        <script src="scripts/controllers/todos.js"></script>
         <!-- endbuild -->
 
         <script src="http://localhost:35729/livereload.js"></script>
