@@ -8,8 +8,13 @@ angular.module('timeShareApp', ['ngRoute']).config(['$routeProvider', '$location
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/service', {
-        templateUrl: 'views/service.html',
+      .when('/home', {
+        templateUrl: 'views/ts-landing-page.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main'
+      })
+      .when('/howItWorks', {
+        templateUrl: 'views/howItWorks.html',
         controller: 'ServiceCtrl',
         controllerAs: 'service'
       })
@@ -27,6 +32,11 @@ angular.module('timeShareApp', ['ngRoute']).config(['$routeProvider', '$location
         templateUrl: 'views/signUp.html',
         controller: 'SignUpCtrl',
         controllerAs: 'signUp'
+      })
+      .when('/login', {
+        templateUrl: 'views/signIn.html',
+        controller: 'SignInCtrl',
+        controllerAs: 'signIn'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
