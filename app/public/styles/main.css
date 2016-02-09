@@ -4,7 +4,7 @@ body {
   font-size: 17px;
   font-weight: 400;
   background:#fff2e5; margin:0;
-  padding: 0;
+  padding-top: 80px;
   overflow: hidden;
 }
 
@@ -42,6 +42,9 @@ body {
     max-width: 970px;
     margin-left: 0px;
     margin-right: 0px;
+  }
+  .body {
+    padding-top: 0px;
   }
 }
 .container-narrow > hr {
@@ -112,14 +115,6 @@ body {
   box-shadow:none;
   float: right;
   height: 20px;
-}
-
-#animate-if-on {
-  content: url("/images/sound.png");
-}
-
-#animate-if-off {
-  content: url("/images/no_sound.png");
 }
 
 #geeks {
