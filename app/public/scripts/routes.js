@@ -15,8 +15,8 @@ angular.module('timeShareApp', ['ngRoute']).config(['$routeProvider', '$location
       })
         .when('/login', {
           templateUrl: 'views/login.html',
-          controller: 'ServiceCtrl',
-          controllerAs: 'service'
+          controller: 'LoginCtrl',
+          controllerAs: 'login'
         })
       .when('/help', {
         templateUrl: 'views/help.html',
