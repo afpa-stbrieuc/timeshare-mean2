@@ -8,5 +8,5 @@ angular.module('timeShareApp')
             this.$route = $route;
             this.$location = $location;
             this.$routeParams = $routeParams;
-        }
+          }
     ]);
