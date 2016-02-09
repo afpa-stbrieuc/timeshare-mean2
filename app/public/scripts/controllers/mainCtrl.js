@@ -5,8 +5,8 @@ angular.module('timeShareApp')
 			this.$route = $route;
 			this.$location = $location;
 			this.$routeParams = $routeParams;
-			$scope.isActive = function (viewLocation) { 
-        	return viewLocation === $location.path();
-    };
+			$scope.isActive = function(viewLocation) {
+				return viewLocation === $location.path();
+			};
 		}
 	]);
