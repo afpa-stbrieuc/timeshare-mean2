@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('timeShareApp', ['ngRoute']).config(['$routeProvider', '$locationProvider', 
+angular.module('timeShareApp', ['ngRoute']).config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider){
     $routeProvider
       .when('/', {
@@ -36,8 +36,8 @@ angular.module('timeShareApp', ['ngRoute']).config(['$routeProvider', '$location
       .otherwise({
         redirectTo: '/'
       });
-      $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-      });
-  }]);
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
+}]);
