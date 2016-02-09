@@ -3,7 +3,7 @@
  */
 'use strict';
 angular.module('timeShareApp')
-    .controller('MainCtrl', ['$route', '$routeParams', '$location',
+    .controller('LoginCtrl', ['$route', '$routeParams', '$location',
         function($route, $routeParams, $location) {
             this.$route = $route;
             this.$location = $location;
