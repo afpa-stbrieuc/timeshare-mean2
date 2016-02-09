@@ -191,3 +191,7 @@ a:hover {
   color: white;
   width: inherit;
 }
+
+.navbar-inverse .navbar-nav .active > a{
+  background-color: #26353C;
+}
