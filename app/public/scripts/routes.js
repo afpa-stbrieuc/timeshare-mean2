@@ -7,12 +7,7 @@ angular.module('timeShareApp', ['ngRoute']).config(['$routeProvider', '$location
           templateUrl: 'views/ts-landing-page.html',
           controller: 'MainCtrl',
           controllerAs: 'main'
-            })
-            .when('/home', {
-          templateUrl: 'views/ts-landing-page.html',
-          controller: 'MainCtrl',
-          controllerAs: 'main'
-            })
+            })          
             .when('/howItWorks', {
           templateUrl: 'views/howItWorks.html',
           controller: 'ServiceCtrl',

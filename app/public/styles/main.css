@@ -38,10 +38,18 @@ body {
 
 /* Customize container */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 970px;
-    margin-left: 0px;
-    margin-right: 0px;
+  div.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: table;
+    max-width: 1170px;
+  }
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .body {
     padding-top: 0px;
@@ -88,11 +96,10 @@ body {
   }
 }
 
-/*Animated button - pulsation */
+/*Animated button*/
 .animated_btn {
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-top: 20px;
 } 
 
 .animated_btn:hover {
@@ -106,6 +113,14 @@ body {
  &:hover {
   background: rgba(255,255,255,1);
   color: #E1332D;
+}
+.my_control{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#my_audio {
+  width: 50%;
 }
 
 /*Make button transparent showing only image icon*/
@@ -125,10 +140,6 @@ body {
   color: white;
   width: inherit;
   display: inline-block;
-}
-
-#canvas {
-  position: absolute;
 }
 
 .title {
@@ -153,13 +164,41 @@ a:hover {
   color: #ffad99;
 }
 
-#logo {
-  height: 80px;
-  width: 86px;
-}
-
 .navbar-header {
   float: none!Important;
+}
+
+#logo {
+  margin: 0px;
+  padding: 5px 0px;
+  vertical-align: middle;
+  height: 50px;
+}
+
+#slogan {
+  position: relative;
+  color: white;
+}
+
+.container .jumbotron {
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  /*make jumbotron background transparent*/
+  background: rgba(200, 54, 54, 0); 
+}
+.jumbotron .container {
+  width: inherit;
+  height: inherit;
+}
+
+.navbar-brand {
+  margin-left: 0px;
+  float: none;
+  padding: 0px 0px;
+
 }
 
 .navbar-footer {
@@ -189,4 +228,9 @@ a:hover {
 
 .navbar-inverse .navbar-nav .active > a{
   background-color: #26353C;
+}
+
+#my_canvas {
+  width: inherit;
+  height: inherit;
 }

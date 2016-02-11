@@ -4,6 +4,11 @@ var express = require('express')
 //static assets
 router.use(express.static(__dirname + '/../../public'));
 
+router.use(function(req, res) {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
+
 router.use('/api/accounts', require('./accounts'));
 router.use('/api/todos', require('./todos'));
 router.use('/api/announces', require('./announces'));
