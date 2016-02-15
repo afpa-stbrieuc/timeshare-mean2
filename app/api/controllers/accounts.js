@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
-
+var User = require('../models/users');
 var Account = require('../models/accounts');
 
 router.get('/', function(req, res) {
@@ -56,6 +56,10 @@ router.put('/:account_id', function(req, res) {
 
 		if (err){
 			res.send(err);
+
+			account.userid = req.body.userid; // set the Account userid (comes from the request)
+			account.solde = req.body.solde;
+			account.advertsid = req.body.announceid;
 		}
 		account.name = req.body.name;
 		account.save(function(err) {
