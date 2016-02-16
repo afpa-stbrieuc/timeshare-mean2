@@ -19,9 +19,22 @@
             </span>
             <span class="pull-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="/register" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="/login" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul> 
+                    <li><a href="/register" class="btn animated_btn navbar-btn" ng-show="!$scope.isUserLoggedIn" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <!--<li><a href="/login" class="btn animated_btn navbar-btn" ng-show="!$scope.isUserLoggedIn" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+                    <li class="dropdown" id="menuLogin" ng-show="$scope.isUserLoggedIn" >
+                        <a href="/logout" class="btn animated_btn navbar-btn" ng-show="$scope.isUserLoggedIn" ><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+                    </li>
+                    <li class="dropdown" id="menuLogin2" ng-show="!$scope.isUserLoggedIn">
+                        <a class="dropdown-toggle btn animated_btn navbar-btn" href="#" data-toggle="dropdown" id="navLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        <div class="dropdown-menu" style="padding:17px;">
+                            <form class="form" id="formLogin">
+                                <input name="username" id="username" type="text" placeholder="Username">
+                                <input name="password" id="password" type="password" placeholder="Password"><br>
+                                <button type="button" id="btnLogin" class="btn">Login</button>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
             </span>                        
             </div>
         </div>
