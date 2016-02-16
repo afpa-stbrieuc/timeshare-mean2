@@ -1,36 +1,18 @@
-<!-- navigation bar -->
-<div header></div>
+<div class="well">
 
-<!-- page body -->
-<div class="container">
-    <div class="row">
+    <!--<div class="row" style="margin-top:10px">-->
 
-        <h1 class="text-center">Connexion</h1>
-        <hr class="colorgraph">
-        <p class="lead"> si vous ne possedez pas de compte, veuillez vous <a href="/register">inscrire</a></p>
-        <form class="form" ng-submit="vm.onSubmit()" >
+        <form  ng-submit="login.onSubmit()" >
             <fieldset>
-                <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{vm.formError}}</div>
-                <div class="form-group">
-                    <input type="email"  class="form-control input-lg" placeholder="Votre adresse mail"  ng-model="vm.credentials.mail" required>
-                </div>
-                <div class="form-group">
-                    <input type="password"  class="form-control input-lg" placeholder="Votre mot de passe" ng-model="vm.credentials.password" required>
-                </div>
-
+                <div role="alert" ng-show="login.formError" class="alert alert-danger">{{login.formError}}</div>
+                    <input type="email"  class="form-control input-lg" placeholder="Votre adresse mail"  ng-model="login.credentials.mail" required style="min-width:20em">
+                    <input type="password"  class="form-control input-lg" placeholder="Votre mot de passe" ng-model="login.credentials.password" required>
                 <hr class="colorgraph">
                 <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-md-6">
                         <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
-                    </div>
                 </div>
             </fieldset>
         </form>
 
-    </div>
+    <!--</div>-->
 </div>
-
-<!-- footer -->
-<div footer></div>
-
-
