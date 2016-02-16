@@ -1,8 +1,6 @@
 /**
  * Created by cthed on 09/02/2016.
  */
-'use strict';
-
 (function() {
   angular
   .module('timeShareApp')
@@ -14,19 +12,19 @@
 
     login.pageHeader = {
       title: 'Connexion'
-    }
+    };
 
     login.credentials = {
-      mail: "",
-      password: ""
+      mail: '',
+      password: ''
     };
 
     login.returnPage = $location.search().page || '/';
 
     login.onSubmit = function() {
-      login.formError = "";
+      login.formError = '';
       if (!login.credentials.mail || !login.credentials.password) {
-        login.formError = "tous les champs sont requis";
+        login.formError = 'tous les champs sont requis';
         return false;
       } else {
         login.doLogin();
@@ -34,7 +32,7 @@
     };
 
     login.doLogin = function() {
-      login.formError = "";
+      login.formError = '';
       authentication
       .login(login.credentials)
       .error(function(err) {
