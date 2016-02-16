@@ -1,10 +1,18 @@
-<!-- navigation bar -->
-<div header></div>
-<!-- page body -->
-<div class="container" ng-controller="LoginCtrl">
-    <div class="row">
-        <h5>Hello from login page</h5>
-    </div>
+<div class="well">
+
+    <!--<div class="row" style="margin-top:10px">-->
+
+        <form  ng-submit="login.onSubmit()" >
+            <fieldset>
+                <div role="alert" ng-show="login.formError" class="alert alert-danger">{{login.formError}}</div>
+                    <input type="email"  class="form-control input-lg" placeholder="Votre adresse mail"  ng-model="login.credentials.mail" required style="min-width:20em">
+                    <input type="password"  class="form-control input-lg" placeholder="Votre mot de passe" ng-model="login.credentials.password" required>
+                <hr class="colorgraph">
+                <div class="row">
+                        <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+                </div>
+            </fieldset>
+        </form>
+
+    <!--</div>-->
 </div>
-<!-- footer -->
-<div footer></div>

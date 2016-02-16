@@ -65,10 +65,10 @@ app.use(require('./controllers'));
 var server;
 
 // passport config
-//var User = require('./models/users');
-//passport.use(new LocalStrategy(User.authenticate()));
-//passport.serializeUser(User.serializeUser());
-//passport.deserializeUser(User.deserializeUser());
+var User = require('./models/users');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 

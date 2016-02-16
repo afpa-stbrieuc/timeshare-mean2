@@ -9,7 +9,8 @@ angular.module('timeShareApp', [
   'ui.bootstrap',
   'dialogs.main' //https://github.com/m-e-conroy/angular-dialog-service
 ])
-  .config(['$resourceProvider', function($resourceProvider) {
+  .config(['$resourceProvider',
+    function($resourceProvider) {
     // this is to allow calling GET /todos/ instead of /todos
     $resourceProvider.defaults.stripTrailingSlashes = false;
   }])

@@ -1,8 +1,12 @@
 'use strict';
 
-angular.module('timeShareApp', ['ngRoute']).config(['$routeProvider', '$locationProvider',
-  function ($routeProvider, $locationProvider) {
+angular.module('timeShareApp', [
+  'ngRoute'
+])
+  .config(['$routeProvider', '$locationProvider',
+    function ($routeProvider, $locationProvider) {
     $routeProvider
+
     .when('/', {
       templateUrl: 'views/ts-landing-page.html',
       controller: 'MainCtrl',
