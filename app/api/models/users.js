@@ -7,6 +7,7 @@ var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 var validator = require('node-mongoose-validator');
 var Schema       = mongoose.Schema;
+var passportLocalMongoose = require('passport-local-mongoose');
 
 var UserSchema;
 UserSchema = new Schema (
@@ -104,5 +105,6 @@ UserSchema.path('firstName').validate(validator.isLength({
 }), 'FirstName must be at least 3 characters.');
 UserSchema.path('mail').validate(validator.isEmail(), 'Please provide a valid email address example@example.com');
 
+UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('timeshare', UserSchema);
