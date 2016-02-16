@@ -43,6 +43,11 @@ angular.module('timeShareApp', ['ngRoute']).config(['$routeProvider', '$location
       controller: 'ContactCtrl',
       controllerAs: 'contact'
     })
+      .when('/search', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'search'
+      })
     .otherwise({
       redirectTo: '/'
     });
