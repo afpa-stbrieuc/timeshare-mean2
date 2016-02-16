@@ -1,11 +1,14 @@
 /**
  * Created by cthed on 09/02/2016.
  */
+'use strict';
+
 (function() {
   angular
   .module('timeShareApp')
   .controller('LoginCtrl', loginCtrl);
-  loginCtrl.$inject = ['$location', 'authentication'];
+
+    loginCtrl.$inject = ['$location', 'authentication'];
 
   function loginCtrl($location, authentication) {
     var login = this;
