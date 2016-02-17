@@ -4,7 +4,7 @@ body {
   font-size: 17px;
   font-weight: 400;
   background:#fff2e5; margin:0;
-  padding-top: 80px;
+  padding-top: 5px;
   overflow: hidden;
 }
 
@@ -31,7 +31,7 @@ body {
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
+  color: #222;
   border-top: 1px solid #e5e5e5;
   position: relative;
 }
@@ -94,6 +94,12 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+  .title {
+      position: absolute;
+      width: 100%;
+      text-align:center;
+      margin: 0 auto;
+  }
 }
 
 /*Animated button*/
@@ -140,7 +146,6 @@ body {
 
 .title {
   position: absolute;
-  top:100px;
   width: 100%;
   text-align:center;
   font-family: 'Lato', sans-serif !important;
@@ -148,6 +153,7 @@ body {
   font-weight: 100;
   font-size: 70px;
   color: #fe6e34;
+    margin: 0 auto;
 }
 
 a {
@@ -164,16 +170,9 @@ a:hover {
   float: none!Important;
 }
 
-#logo {
-  margin: 0px;
-  padding: 5px 0px;
-  vertical-align: middle;
-  height: 50px;
-}
-
 #slogan {
   position: relative;
-  color: white;
+  color: darkslategrey;
 }
 
 .container .jumbotron {
@@ -231,6 +230,18 @@ a:hover {
   height: inherit;
 }
 
-#view_row {
-    padding-top: 50px;
+.fix_header {
+    height: 60px;
+    background-color: inherit;
+}
+
+.stickynav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar {
+    border-radius: 0px;
+    margin-bottom: 1px;
 }

@@ -1,6 +1,6 @@
 'use strict';
 angular.module('timeShareApp')
-  .controller('MainCtrl', ['$scope', '$route', '$routeParams', '$location',
+  .controller('MainCtrl', ['$scope', '$route', '$routeParams', '$location', '$window',
     function($scope, $route, $routeParams, $location) {
       this.$route = $route;
       this.$location = $location;
@@ -10,3 +10,5 @@ angular.module('timeShareApp')
       };
     }
   ]);
+
+
