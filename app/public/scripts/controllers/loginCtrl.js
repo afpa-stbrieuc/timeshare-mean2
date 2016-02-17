@@ -7,26 +7,27 @@
   angular
   .module('timeShareApp')
   .controller('LoginCtrl', loginCtrl);
-  loginCtrl.$inject = ['$location', 'authentication'];
+
+    loginCtrl.$inject = ['$location', 'authentication'];
 
   function loginCtrl($location, authentication) {
     var login = this;
 
     login.pageHeader = {
       title: 'Connexion'
-    }
+    };
 
     login.credentials = {
-      mail: "",
-      password: ""
+      mail: '',
+      password: ''
     };
 
     login.returnPage = $location.search().page || '/';
 
     login.onSubmit = function() {
-      login.formError = "";
+      login.formError = '';
       if (!login.credentials.mail || !login.credentials.password) {
-        login.formError = "tous les champs sont requis";
+        login.formError = 'tous les champs sont requis';
         return false;
       } else {
         login.doLogin();
@@ -34,7 +35,7 @@
     };
 
     login.doLogin = function() {
-      login.formError = "";
+      login.formError = '';
       authentication
       .login(login.credentials)
       .error(function(err) {
