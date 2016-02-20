@@ -43,17 +43,54 @@ router.post('/register', function(req, res) {
     user.avatar = req.body.avatar,
     user.active = req.body.active;
 
-
   user.save(function(err) {
-    if (err)
-      res.send(err);
-
-    res.json(201, user);
+    var token;
+    if (err) {
+      sendJSONresponse(res, 400, err);
+    } else {
+      console.log("generation token");
+      token = user.generateJwt();
+      sendJSONresponse(res, 200, {
+        "token": token
+      });
+    }
   });
-
 
 });
 
+
+// login user
+router.post('/login', function(req, res) {
+  console.log("c est parti pour logger cette personne");
+  if (!req.body.mail || !req.body.password) {
+    sendJSONresponse(res, 400, {
+      "message": "All fields required"
+    });
+    return;
+  }
+
+  passport.authenticate('local', function(err, user, info) {
+    var token;
+
+    if (err) {
+      sendJSONresponse(res, 404, err);
+      return;
+    }
+
+    if (user) {
+      token = user.generateJwt();
+      sendJSONresponse(res, 200, {
+        "token": token
+      });
+    } else {
+      sendJSONresponse(res, 401, info);
+    }
+  })(req, res);
+
+});
+
+
+// list users
 router.get('/', function(req, res) {
   User.find(function(err, users) {
     if (err)
@@ -64,29 +101,46 @@ router.get('/', function(req, res) {
 });
 
 
-
-
-
 // get the User with that id
-router.get('/:user_id', function(req, res) {
+router.get('/:id', function(req, res) {
 
-  User.findById(req.params.user_id, function(err, user) {
-    if (err)
+  User.findById(req.params.id, function(err, user) {
+    if (err) {
+      console.log('ERROR'.err);
       res.send(err);
-    res.json(user);
+    }
+    else {
+      res.json(user);
+    }
   });
 
 });
 
 // update the User with this id
-router.put('/:user_id', function(req, res) {
+//router.put('/:id', function(req, res) {
+//
+//  if (req.params.user_id === undefined) return res.send(400,'user id empty');
+//
+//  User.findById(req.params.user_id, function(err, user) {
+//
+//    if (err)
+//      res.send(err);
 
-  if (req.params.user_id === undefined) return res.send(400,'user id empty');
+router.put('/updateProfile', function(req, res) {
+  console.log("update user datas");
+  if (!req.body.lastName || !req.body.firstName || !req.body.mail || !req.body._id || !req.body.password) {
+    sendJSONresponse(res, 400, {
+      "message": "login incorrect"
+    });
+    return;
+  }
 
-  User.findById(req.params.user_id, function(err, user) {
 
-    if (err)
-      res.send(err);
+  var user = User.findById(req.body._id, function(err, user) {
+    console.log(user);
+
+    if (user.validPassword(req.body.password)){
+
 
     user.firstName = req.body.firstName,
       user.lastName = req.body.lastName,
@@ -105,15 +159,21 @@ router.put('/:user_id', function(req, res) {
       user.avatar = req.body.avatar,
       user.active = req.body.active;
 
-    user.save(function(err) {
-      if (err)
-        res.send(err);
+      console.log("update done");
+      console.log("generation token");
+      token = user.generateJwt();
+      sendJSONresponse(res, 200, {
+        "token": token
+      });
 
-      res.json(user);
+    }else{ sendJSONresponse(res, 400, {
+      "message": "wrong password"
     });
+    }
 
   });
 });
+
 
 // delete the User with this id
 router.delete('/:user_id', function(req, res) {

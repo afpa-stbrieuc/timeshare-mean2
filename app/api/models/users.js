@@ -2,11 +2,11 @@
  * New node file
  */
 
-var mongoose     = require('mongoose');
+var mongoose = require('mongoose');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 var validator = require('node-mongoose-validator');
-var Schema       = mongoose.Schema;
+var Schema = mongoose.Schema;
 var passportLocalMongoose = require('passport-local-mongoose');
 
 var UserSchema;
@@ -32,7 +32,7 @@ UserSchema = new Schema (
           if (!v) {
             return true
           } else {
-            return /+?d{11}/.test(v); //  test if phone number is 11 digits
+            return /\+?\d{11}/.test(v); //  test if phone number is 11 digits
           }
 
         },
@@ -107,4 +107,4 @@ UserSchema.path('mail').validate(validator.isEmail(), 'Please provide a valid em
 
 UserSchema.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model('timeshare', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
