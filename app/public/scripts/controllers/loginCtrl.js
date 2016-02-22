@@ -25,7 +25,11 @@
     login.returnPage = $location.search().page || '/';
 
     login.onSubmit = function() {
+      console.log('kikou');
+
+
       login.formError = '';
+
       if (!login.credentials.mail || !login.credentials.password) {
         login.formError = 'tous les champs sont requis';
         return false;
