@@ -1,7 +1,9 @@
 'use strict';
 (function () {
-
-  function config($routeProvider){
+  angular
+  .module('timeShareApp')
+  .config(['$routeProvider','$locationProvider', config]);
+  function config($routeProvider, $locationProvider){
     $routeProvider
 
     .when('/', {
@@ -50,13 +52,10 @@
     .otherwise({
       redirectTo: '/'
     });
+
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
     });
   }
-  angular
-  .module('timeShareApp')
-  .config(['$routeProvider', config]);
-
 })();
