@@ -2,7 +2,7 @@
 
     <!--<div class="row" style="margin-top:10px">-->
 
-        <form  ng-submit="login.onSubmit()" >
+        <form  class="form" ng-submit="login.onSubmit()" >
             <fieldset>
                 <div role="alert" ng-show="login.formError" class="alert alert-danger">{{login.formError}}</div>
                     <input type="email"  class="form-control input-lg" placeholder="Votre adresse mail"  ng-model="login.credentials.mail" required style="min-width:20em">
