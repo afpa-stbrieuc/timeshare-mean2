@@ -38,10 +38,18 @@ body {
 
 /* Customize container */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 970px;
-    margin-left: 0px;
-    margin-right: 0px;
+  div.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: table;
+    max-width: 1170px;
+  }
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .body {
     padding-top: 0px;
@@ -88,24 +96,27 @@ body {
   }
 }
 
-/*Animated button - pulsation */
+/*Animated button*/
 .animated_btn {
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-top: 20px;
-} 
+}
 
 .animated_btn:hover {
   border: 1px solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
   outline-color: rgba(255, 255, 255, 0);
   outline-offset: 15px;
-  text-shadow: 1px 1px 2px #427388; 
+  text-shadow: 1px 1px 2px #427388;
 }
 
  &:hover {
   background: rgba(255,255,255,1);
   color: #E1332D;
+}
+.my_control{
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /*Make button transparent showing only image icon*/
@@ -121,20 +132,16 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   color: white;
   width: inherit;
   display: inline-block;
 }
 
-#canvas {
-  position: absolute;
-}
-
 .title {
   position: absolute;
   top:100px;
-  width: 100%; 
+  width: 100%;
   text-align:center;
   font-family: 'Lato', sans-serif !important;
   font-style: normal;
@@ -149,17 +156,45 @@ a {
   display:inline-block;
   transition: all .2s;
 }
-a:hover {  
+a:hover {
   color: #ffad99;
-}
-
-#logo {
-  height: 80px;
-  width: 86px;
 }
 
 .navbar-header {
   float: none!Important;
+}
+
+#logo {
+  margin: 0px;
+  padding: 5px 0px;
+  vertical-align: middle;
+  height: 50px;
+}
+
+#slogan {
+  position: relative;
+  color: white;
+}
+
+.container .jumbotron {
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  /*make jumbotron background transparent*/
+  background: rgba(200, 54, 54, 0);
+}
+.jumbotron .container {
+  width: inherit;
+  height: inherit;
+}
+
+.navbar-brand {
+  margin-left: 0px;
+  float: none;
+  padding: 0px 0px;
+
 }
 
 .navbar-footer {
@@ -167,7 +202,7 @@ a:hover {
 }
 
 #btn-group-right {
-  float:right; 
+  float:right;
   margin-top: 8px;
   margin-right: 15px;
   padding-top: 6px;
@@ -181,12 +216,21 @@ a:hover {
 
 .navbar-collapse {
   top: 50%;
-  left: 50%;  
-  line-height: 30px;  
+  left: 50%;
+  line-height: 30px;
   color: white;
   width: inherit;
 }
 
-.navbar-inverse .navbar-nav .active > a{
+.navbar-inverse .navbar-nav .active > a {
   background-color: #26353C;
+}
+
+#my_canvas {
+  width: inherit;
+  height: inherit;
+}
+
+#view_row {
+    padding-top: 50px;
 }

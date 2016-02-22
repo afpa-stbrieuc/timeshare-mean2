@@ -49,6 +49,11 @@
     .when('/404', {
       templateUrl: '404.html'
     })
+      .when('/search', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'search'
+      })
     .otherwise({
       redirectTo: '/'
     });
