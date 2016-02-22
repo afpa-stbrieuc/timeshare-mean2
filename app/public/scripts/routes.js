@@ -1,10 +1,7 @@
 'use strict';
+(function () {
 
-angular.module('timeShareApp', [
-  'ngRoute'
-])
-  .config(['$routeProvider', '$locationProvider',
-    function ($routeProvider, $locationProvider) {
+  function config($routeProvider){
     $routeProvider
 
     .when('/', {
@@ -47,6 +44,9 @@ angular.module('timeShareApp', [
       controller: 'ContactCtrl',
       controllerAs: 'contact'
     })
+    .when('/404', {
+      templateUrl: '404.html'
+    })
     .otherwise({
       redirectTo: '/'
     });
@@ -55,4 +55,8 @@ angular.module('timeShareApp', [
       requireBase: false
     });
   }
-]);
+  angular
+  .module('timeShareApp')
+  .config(['$routeProvider', config]);
+
+})();
