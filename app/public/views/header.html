@@ -25,8 +25,23 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a xref="/register" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a xref="/login" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            <script>
+                                console.log('isloggedin');
+                                console.log(angular.element($("#someId")).scope());
+                            </script>
+                            <li><a href="/register" class="btn animated_btn navbar-btn" ng-show="!$scope.isUserLoggedIn" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <!--<li><a href="/login" class="btn animated_btn navbar-btn" ng-show="!$scope.isUserLoggedIn" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+                            <li class="dropdown" ng-show="$scope.isUserLoggedIn">
+                                <a href="/logout" class="btn animated_btn navbar-btn" ng-show="$scope.isUserLoggedIn" ><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+                            </li>
+                            <li class="dropdown" id="menuLogin" ng-show="!$scope.isUserLoggedIn">
+                                <a class="dropdown-toggle btn animated_btn navbar-btn" href="#" data-toggle="dropdown" id="navLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                                <div class="dropdown-menu pull-right" style="padding:17px;">
+
+                                    <loginform> </loginform>
+                                </div>
+                            </li>
+
                         </ul>
                     </div>
                 </div>

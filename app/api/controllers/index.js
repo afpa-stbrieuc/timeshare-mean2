@@ -1,14 +1,15 @@
 var express = require('express');
-var passport = require('passport');
+//var passport = require('passport');
 var User = require('../models/users');
 var router = express.Router();
+var jwt = require('express-jwt');
+var auth = jwt({
+      secret: process.env.JWT_SECRET,
+      userProperty:'payload'
+  });
 
-
-
-
-
-router.use('/api/users', require('./users'));
-router.use('/api/todos', require('./todos'));
+router.use('/api/users', require('./users'))
+router.use('/api/accounts', require('./users'));
 router.use('/api/announces', require('./announces'));
 router.use('/api/users', require('./users'));
 //do the same for responses and serviceCategories
@@ -16,14 +17,13 @@ router.use('/api/users', require('./users'));
 //static assets
 router.use(express.static(__dirname + '/../../public'));
 
-
 router.get('/*', function(req, res) {
   res.sendFile('index.html', {
     'root': __dirname + '/../../public'
   });
 });
 
-router.get('/register', function(req, res) {
+/*router.get('/register', function(req, res) {
     res.render('register', { });
 });
 
@@ -50,9 +50,16 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
 router.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
-});
+});*/
 
 router.get('/ping', function(req, res){
     res.status(200).send("pong!");
 });
+
+router.get('/*', function(req, res) {
+    res.sendFile('index.html', {
+        'root': __dirname + '/../../public'
+    });
+});
+
 module.exports = router;

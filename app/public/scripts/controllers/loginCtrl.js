@@ -8,8 +8,7 @@
   .module('timeShareApp')
   .controller('LoginCtrl', loginCtrl);
 
-    loginCtrl.$inject = ['$location', 'authentication'];
-
+  loginCtrl.$inject = ['$location', 'authentication'];
   function loginCtrl($location, authentication) {
     var login = this;
 
@@ -31,15 +30,20 @@
       login.formError = '';
 
       if (!login.credentials.mail || !login.credentials.password) {
+        console.log('faut remplir');
         login.formError = 'tous les champs sont requis';
         return false;
       } else {
+        console.log('appel le login');
         login.doLogin();
       }
     };
 
     login.doLogin = function() {
+      console.log('start login authentication');
       login.formError = '';
+      console.log(login.credentials);
+      console.log('call authentication service login');
       authentication
       .login(login.credentials)
       .error(function(err) {

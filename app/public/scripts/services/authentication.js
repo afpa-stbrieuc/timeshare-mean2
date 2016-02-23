@@ -4,8 +4,8 @@
 (function() {
 
   angular
-  .module('timeShareApp')
-  .service('authentication', authentication);
+    .module('timeShareApp')
+    .service('authentication', authentication);
 
   authentication.$inject = ['$http', '$window'];
 
@@ -38,16 +38,16 @@
         return {
           _id: payload._id,
           mail: payload.mail,
-          lastname: payload.lastname,
-          firstname: payload.firstname,
+          lastnNme: payload.lastName,
+          firstName: payload.firstName,
           tel: payload.tel,
-          adress: payload.adress
+          address: payload.address
         };
       }
     };
 
     register = function(user) {
-      return $http.post('/api/users/inscription', user).success(function(data) {
+      return $http.post('/api/users/register', user).success(function(data) {
         saveToken(data.token);
         console.log(data.token);
         console.log("c fait");
@@ -65,6 +65,8 @@
     };
 
     login = function(user) {
+      console.log('login user');
+      console.log(user);
       return $http.post('/api/users/login', user).success(function(data) {
         saveToken(data.token);
         console.log(data.token);
