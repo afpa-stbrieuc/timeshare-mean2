@@ -23,16 +23,16 @@
   <!-- endbuild -->
   <base href="/">
 </head>
-<body ng-app="timeShareApp">
+<body ng-app="timeShareApp" data-spy="scroll" data-target="#scrollToSearch" data-offset="50">
 
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- navigation bar -->
-<header ng-controller="MainCtrl" ></header>
+<header ng-controller="MainCtrl"></header>
 <!-- Add your site or application content here -->
-<div class="container" ng-view=""></div>
+<div class="container" id="main_container" ng-view=""></div>
 <!-- footer -->
 <footer></footer>
 

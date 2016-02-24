@@ -1,3 +1,81 @@
 <!-- page body -->
-<div class="title">TimeShare<br>Welcome</div>
-<canvas id="my_canvas"><script src="/views/infinite-loop.js"></script></canvas>
+    <div class="fix_header">
+        <div class="row">
+            <div class= "col-md-8">
+                <span id="slogan"><strong>Swap out your skills</strong></span>
+            </div>
+            <div class="col-md-2 pull-right" style="padding-left: 30px; padding-right: 0px;">
+            <span class="wrapper">
+                <div class="counter" data-to="17658" data-speed="0.2">17500</div>
+                <h6><strong>Skills swaped</strong></h6>
+            </span>
+            </div>
+            <div class="col-md-2 pull-right" style="padding-left: 30px; padding-right: 0px;">
+            <span class="wrapper">
+                <div class="counter" data-to="9284" data-speed="0.2">9126</div>
+                <h6><strong>Subscribed users</strong></h6>
+            </span>
+            </div>
+        </div>
+
+        <script>
+            var stats_counter = function() {
+                if($('.counter').length > 0) {
+                    function increment($this, speed){
+                        var current = parseInt($this.html(), 10);
+                        $this.html(++current);
+                        if(current !== $this.data('to')){
+                            setTimeout(function(){increment($this, speed)}, speed);
+                        }
+                    }
+                    $('.counter').each(function(index) {
+                        increment($(this), parseInt($(this).data('speed')));
+                    });
+                }
+            }
+            stats_counter();
+        </script>
+    </div>
+    <div class="title">TimeShare<br>Welcome</div>
+    <canvas id="my_canvas"><script src="/views/infinite-loop.js"></script></canvas>
+
+<div class="jumbotron">
+    <div class="row" id="search">
+        <h6 id="scrollToSearch"><strong>Search</strong></h6>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <select class="form-control" data-ng-model="regionSelected"
+                    ng-options="regionSelected as regionSelected for (regionSelected, val) in france"
+                    ng-change="updateRegion(regionSelected)">
+                <option value="" selected disabled>Select Region</option>
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <select class="form-control" data-ng-model="departmentSelected"
+                    ng-options="d for d in france[regionSelected]"
+                    ng-change="updateDepartment(departmentSelected)">
+                <option value="" selected disabled>Select Department</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <input type="text" class="form-control" id="cdPostal" value="Enter zip code">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <select class="form-control" data-ng-model="skillSelected"
+                    ng-options="s for s in skillSet"
+                    ng-change="updateSkill(skillSelected)">
+                <option value="" selected disabled>Select Skill</option>
+            </select>
+        </div>
+        <div class="col-sm-1">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </div>
+</div>
+
+
+
+
