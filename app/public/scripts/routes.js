@@ -1,10 +1,9 @@
 'use strict';
-
-angular.module('timeShareApp', [
-  'ngRoute'
-])
-  .config(['$routeProvider', '$locationProvider',
-    function ($routeProvider, $locationProvider) {
+(function () {
+  angular
+  .module('timeShareApp')
+  .config(['$routeProvider','$locationProvider', config]);
+  function config($routeProvider, $locationProvider){
     $routeProvider
 
     .when('/', {
@@ -34,8 +33,8 @@ angular.module('timeShareApp', [
     })
     .when('/register', {
       templateUrl: 'views/signUp.html',
-      controller: 'SignUpCtrl',
-      controllerAs: 'signUp'
+      controller: 'RegisterCtrl',
+      controllerAs: 'register'
     })
     .when('/about', {
       templateUrl: 'views/about.html',
@@ -47,12 +46,21 @@ angular.module('timeShareApp', [
       controller: 'ContactCtrl',
       controllerAs: 'contact'
     })
+    .when('/404', {
+      templateUrl: '404.html'
+    })
+      .when('/search', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'search'
+      })
     .otherwise({
       redirectTo: '/'
     });
+
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
     });
   }
-]);
+})();

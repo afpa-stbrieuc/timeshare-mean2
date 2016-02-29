@@ -7,6 +7,11 @@ angular.module('timeShareApp', [
   'ngSanitize',
   'pascalprecht.translate',
   'ui.bootstrap',
+  /*'ngFileUpload',*/
+  /*'smoothScroll',*/
+  /*'countTo',*/
+  /*'filtreAccount',*/
+  /*'mp.datePicker',*/
   'dialogs.main' //https://github.com/m-e-conroy/angular-dialog-service
 ])
   .config(['$resourceProvider',
@@ -19,7 +24,7 @@ angular.module('timeShareApp', [
     dialogsProvider.setSize('sm');
   }])
   .config(['$translateProvider',function($translateProvider){
-    
+
     $translateProvider.useSanitizeValueStrategy('sanitize');
     $translateProvider.preferredLanguage('en-US');
 

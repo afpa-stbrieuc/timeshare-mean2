@@ -2,22 +2,32 @@
  * New node file
  */
 
-var mongoose     = require('mongoose');
+var mongoose = require('mongoose');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 var validator = require('node-mongoose-validator');
-var Schema       = mongoose.Schema;
-var passportLocalMongoose = require('passport-local-mongoose');
+var Schema = mongoose.Schema;
 
 var UserSchema;
 UserSchema = new Schema (
   {
-    userID: Number,
-    firstName: String,
-    lastName: String,
-    address: String,
+    lastName: {
+      type: String,
+      maxength: 50
+    },
+    firstName: {
+      type: String,
+      maxlength: 50
+    },
+    address: {
+      type: String,
+      maxlength: 120
+    },
     zipcode: Number,
-    country: String,
+    country: {
+      type: String,
+      maxlength: 40
+    },
     mail: {
       type: String,
       required: true,
@@ -32,7 +42,7 @@ UserSchema = new Schema (
           if (!v) {
             return true
           } else {
-            return /+?d{11}/.test(v); //  test if phone number is 11 digits
+            return /\+?\d{11}/.test(v); //  test if phone number is 11 digits
           }
 
         },
@@ -45,10 +55,12 @@ UserSchema = new Schema (
     lastconnectiondate: Date,
     lastconnectionip: String,
     nickname: String,
-    password: String,
     avatar: String, // stocke le lien vers l'image. une autre solution est
     // gridFS pour stocker une image
-    active: {type: Boolean, default: true},
+    active: {
+      type: Boolean,
+      default: true
+    },
     verified: {
       type: Boolean,
       default: false
@@ -59,18 +71,18 @@ UserSchema = new Schema (
       type: Boolean,
       default: false
     }
-  },
-
-  {
+  },  {
     autoIndex: false
-  },
-  {
+  },  {
     collection: 'user'
   });
 
 UserSchema.methods.setPassword = function(password) {
+  console.log('crypto password : ' + password);
   this.salt = crypto.randomBytes(16).toString('hex');
+  console.log('salt' + this.salt);
   this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+  console.log('hash : ' + this.hash);
 };
 
 UserSchema.methods.validPassword = function(password) {
@@ -88,7 +100,7 @@ UserSchema.methods.generateJwt = function() {
     lastName: this.lastName,
     firstName: this.firstName,
     tel: this.tel,
-    adress: this.adress,
+    address: this.address,
     exp: parseInt(expiry.getTime() / 1000),
   }, process.env.JWT_SECRET); // DO NOT KEEP YOUR SECRET IN THE CODE!
 };
@@ -105,6 +117,4 @@ UserSchema.path('firstName').validate(validator.isLength({
 }), 'FirstName must be at least 3 characters.');
 UserSchema.path('mail').validate(validator.isEmail(), 'Please provide a valid email address example@example.com');
 
-UserSchema.plugin(passportLocalMongoose);
-
-module.exports = mongoose.model('timeshare', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

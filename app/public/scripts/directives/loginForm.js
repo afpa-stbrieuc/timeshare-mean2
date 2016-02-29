@@ -4,6 +4,8 @@
 angular.module('timeShareApp')
 .directive('loginform', function() {
   return {
-    templateUrl: 'views/login.html'
+    templateUrl: 'views/login.html',
+    controller:'LoginCtrl',
+    controllerAs:'login'
   };
 });
