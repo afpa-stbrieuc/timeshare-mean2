@@ -62,7 +62,7 @@
         </div>
         <div class="col-sm-2">
             <div class="form-group">
-                <input type="text" class="form-control" id="cdPostal" value="Enter zip code">
+                <input type="text" class="form-control" name="cdPostal" ng-pattern="onlyNumbers" placeholder="Enter zip code">
             </div>
         </div>
         <div class="col-sm-3">
@@ -77,6 +77,26 @@
         </div>
     </div>
 </div>
+<table st-table="rowCollection" class="table table-striped">
+    <thead>
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>birth date</th>
+        <th>balance</th>
+        <th>email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in rowCollection">
+        <td>{{row.firstName}}</td>
+        <td>{{row.lastName}}</td>
+        <td>{{row.birthDate}}</td>
+        <td>{{row.balance}}</td>
+        <td>{{row.email}}</td>
+    </tr>
+    </tbody>
+</table>
 
 
 
