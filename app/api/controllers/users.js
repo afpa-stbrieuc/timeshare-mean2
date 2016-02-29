@@ -5,8 +5,8 @@ var express = require('express');
 var router = express.Router();
 
 var User = require('../models/users');
+//var Accountdb = require('../models/accounts');
 
-var Accountdb = require('../models/accounts');
 var passport = require('passport');
 var mongoose = require('mongoose');
 
@@ -26,22 +26,24 @@ router.post('/register', function(req, res) {
   }
 
   var user = new User(); // create a new instance of the User model
-  user.firstName = req.body.firstName,
-    user.lastName = req.body.lastName,
-    user.address = req.body.address,
-    user.zipcode = req.body.zipcode,
-    user.country = req.body.country,
-    user.mail = req.body.mail,
-    user.phone = req.body.phone,
-    user.cellphone = req.body.cellphone,
-    user.birthdate = req.body.birthdate,
-    user.subscriptiondate = req.body.subscriptiondate,
-    user.lastconnectiondate = req.body.lastconnectiondate,
-    user.lastconnectionip = req.body.lastconnectionip,
-    user.nickname = req.body.nickname,
-    user.password = req.body.password,
-    user.avatar = req.body.avatar,
-    user.active = req.body.active;
+  user.active = req.body.active;
+  user.firstName = req.body.firstName;
+  user.lastName = req.body.lastName;
+  user.address = req.body.address;
+  user.zipcode = req.body.zipcode;
+  user.country = req.body.country;
+  user.mail = req.body.mail;
+  user.phone = req.body.phone;
+  user.cellphone = req.body.cellphone;
+  user.birthdate = req.body.birthdate;
+  user.subscriptiondate = req.body.subscriptiondate;
+  user.lastconnectiondate = req.body.lastconnectiondate;
+  user.lastconnectionip = req.body.lastconnectionip;
+  user.nickname = req.body.nickname;
+  user.avatar = req.body.avatar;
+  user.verified = false;
+
+  user.setPassword(req.body.password);
 
   user.save(function(err) {
     var token;
@@ -53,6 +55,8 @@ router.post('/register', function(req, res) {
       sendJSONresponse(res, 200, {
         "token": token
       });
+      console.log(token);
+      console.log(' token done');
     }
   });
 
@@ -62,6 +66,7 @@ router.post('/register', function(req, res) {
 // login user
 router.post('/login', function(req, res) {
   console.log("c est parti pour logger cette personne");
+  console.log(req.body);
   if (!req.body.mail || !req.body.password) {
     sendJSONresponse(res, 400, {
       "message": "All fields required"
@@ -70,6 +75,10 @@ router.post('/login', function(req, res) {
   }
 
   passport.authenticate('local', function(err, user, info) {
+    console.log('user');
+    console.log(user);
+    console.log('arguments');
+    console.log(arguments);
     var token;
 
     if (err) {

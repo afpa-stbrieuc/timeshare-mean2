@@ -1,236 +1,324 @@
 /* Space out content a bit */
 body {
-  font-family: 'Fira Sans', serif, italic;
-  font-size: 17px;
-  font-weight: 400;
-  background:#fff2e5; margin:0;
-  padding-top: 80px;
-  overflow: hidden;
+    height: 100%;
+    width: 100%;
+    font-family: 'Fira Sans', serif, italic;
+    font-size: 17px;
+    font-weight: 400;
+    background: rgb(255, 242, 229);
+    padding: 0;
+    margin: 0;
+    background-attachment: fixed;
+    /* make page scrollable*/
+    overflow: auto;
+    position: relative;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
+
 .marketing,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-  position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* Customize container */
-@media (min-width: 1200px) {
-  div.container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: table;
-    max-width: 1170px;
-  }
-  .container{
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .body {
-    padding-top: 0px;
-  }
+@media (min-width: 1170px) {
+    #main_container {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: table;
+        padding-top: 70px;
+        padding-bottom: 15px;
+        overflow:auto;
+    }
+    div.container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: table;
+        max-width: 1170px;
+    }
+    .container{
+        margin: 0 auto 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+
+    }
+    .body {
+        padding-top: 0px;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+    }
 }
 .container-narrow > hr {
-  margin: 30px 0;
+    margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+    /*text-align: center;*/
+    border-bottom: 1px solid #e5e5e5;
 }
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+    margin: 40px 0;
 }
 .marketing p + h4 {
-  margin-top: 28px;
+    margin-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+    /* Remove the padding we set earlier */
+    #main_container {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: table;
+        padding-bottom: 50px;
+    }
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+    .title {
+        position: absolute;
+        width: 100%;
+        text-align:center;
+        margin: 0 auto;
+    }
+    .body {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+    }
 }
 
 /*Animated button*/
 .animated_btn {
-  padding-top: 5px;
-  padding-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .animated_btn:hover {
-  border: 1px solid;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
-  outline-color: rgba(255, 255, 255, 0);
-  outline-offset: 15px;
-  text-shadow: 1px 1px 2px #427388;
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
 }
 
- &:hover {
-  background: rgba(255,255,255,1);
-  color: #E1332D;
-}
+&:hover {
+     background: rgba(255,255,255,1);
+     color: #E1332D;
+ }
 .my_control{
-  padding-top: 5px;
-  padding-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#my_canvas {
+    width: inherit;
+    height: inherit;
 }
 
 /*Make button transparent showing only image icon*/
 #transparent_btn {
-  background:none;
-  border:none;
-  box-shadow:none;
-  float: right;
-  height: 20px;
+    background:none;
+    border:none;
+    box-shadow:none;
+    float: right;
+    height: 20px;
+}
+
+#my_footer {
+    margin-bottom: 0px;
+}
+
+#big_text_alignment {
+    text-align: justify;
 }
 
 #geeks {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  width: inherit;
-  display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: inherit;
+    display: inline-block;
 }
 
 .title {
-  position: absolute;
-  top:100px;
-  width: 100%;
-  text-align:center;
-  font-family: 'Lato', sans-serif !important;
-  font-style: normal;
-  font-weight: 100;
-  font-size: 70px;
-  color: #fe6e34;
+    position: absolute;
+    width: 100%;
+    text-align:center;
+    font-family: 'Lato', sans-serif !important;
+    font-style: normal;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: 100;
+    font-size: 70px;
+    color: #fe6e34;
+    margin: 0 auto;
+}
+
+.wrapper {
+    text-align: center;
+    font-size: 22px;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    color: darkslategrey;
+}
+h6 {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-size: medium;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-  display:inline-block;
-  transition: all .2s;
+    color: inherit;
+    text-decoration: none;
+    display:inline-block;
+    transition: all .2s;
 }
 a:hover {
-  color: #ffad99;
+    color: #ffad99;
 }
 
 .navbar-header {
-  float: none!Important;
-}
-
-#logo {
-  margin: 0px;
-  padding: 5px 0px;
-  vertical-align: middle;
-  height: 50px;
+    padding-top: 5px;
 }
 
 #slogan {
-  position: relative;
-  color: white;
+    position: relative;
+    color: darkslategrey;
 }
 
 .container .jumbotron {
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  /*make jumbotron background transparent*/
-  background: rgba(200, 54, 54, 0);
+    width: inherit;
+    height: auto;
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 10px;
+    /*make jumbotron background transparent*/
+    background: rgba(200, 54, 54, 0);
 }
 .jumbotron .container {
-  width: inherit;
-  height: inherit;
+    width: inherit;
+    height: inherit;
+}
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand {
-  margin-left: 0px;
-  float: none;
-  padding: 0px 0px;
+    margin-left: 0px;
+    float: none;
+    padding: 0px 0px;
+    height: 60px;
 
 }
 
 .navbar-footer {
-  text-align: center;
+    text-align: center;
+    clear: both;
 }
 
 #btn-group-right {
-  float:right;
-  margin-top: 8px;
-  margin-right: 15px;
-  padding-top: 6px;
+    float:right;
+    margin-top: 8px;
+    margin-right: 15px;
+    padding-top: 6px;
 }
 
 /*Green Yin Yang sign*/
 #yin_yang {
-  font-size: 25px;
-  color: #497248;
+    font-size: 25px;
+    color: #497248;
 }
 
 .navbar-collapse {
-  top: 50%;
-  left: 50%;
-  line-height: 30px;
-  color: white;
-  width: inherit;
+    top: 50%;
+    left: 50%;
+    line-height: 30px;
+    color: white;
+    width: inherit;
+}
+
+.navbar-inverse .navbar-nav .navbar-fixed-bottom {
+    margin-bottom: 0px;
+}
+.navbar-nav {
+    margin-left: 10px;
 }
 
 .navbar-inverse .navbar-nav .active > a {
-  background-color: #26353C;
+    background-color: rgb(38, 53, 60);
 }
 
-#my_canvas {
-  width: inherit;
-  height: inherit;
+.fix_header {
+    height: 60px;
+    background-color: inherit;
+    margin-top: 10px;
 }
 
-#view_row {
-    padding-top: 50px;
+.navbar {
+    border-radius: 0px;
+    margin-bottom: 1px;
+}
+
+#search{
+    font-size: large;
+    padding-left: 7px;
+}
+
+#scrollToSearch {
+    color: rgb(38, 53, 60);
+}
+
+div.col-sm-3 {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+div.col-sm-2 {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+div.col-sm-1 {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+.btn {
+    margin-top: 1px;
+}
+
+.affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+}
+.affix ~ .container {
+    position: relative;
+    top: 50px;
 }

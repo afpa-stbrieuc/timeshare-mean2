@@ -1,21 +1,23 @@
+'use strict';
 require('dotenv').config({path: __dirname + '/.env'});
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
+//var cookieParser = require('cookie-parser');
 var multer = require('multer');
 
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
+//var favicon = require('serve-favicon');
+//var logger = require('morgan');
 
 console.log(process.env.JWT_SECRET);
 
+var path = require('path');
 var port = process.env.PORT || 3000;
 
 var mongoose = require('mongoose');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+
+//var LocalStrategy = require('passport-local').Strategy;
 
 var config = require('./config');
 app.set('superSecret', config.secret);
@@ -45,18 +47,21 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+/*// configure cockie parser so we can get http cockies data
 app.use(cookieParser());
 app.use(require('express-session')({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: false
-}));
+}));*/
 
-
+var passport = require('passport');
 require('./config/passport');
 app.use(passport.initialize());
-app.use(passport.session());
-app.use(express.static(path.join(__dirname, 'public')));
+
+//app.use(passport.session());
+
+//app.use(express.static(path.join(__dirname, 'public')));
 
 
 //require will first load controllers/index.js
@@ -67,18 +72,18 @@ app.use(require('./controllers'));
 
 var server;
 
-// passport config
+/*// passport config
 var User = require('./models/users');
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.deserializeUser(User.deserializeUser());*/
 
 
 
 app.boot = function(config){
 
   console.log(config);
-
+  mongoose.set('debug', true);
   mongoose.connect(config.db.mongodb); // connect to our database
 
 

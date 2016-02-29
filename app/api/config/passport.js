@@ -16,6 +16,8 @@ passport.use(new LocalStrategy({
     User.findOne({
       mail: username
     }, function(err, user) {
+      console.log('passeport.js');
+      console.log(user);
       if (err) {
         return done(err);
       }
@@ -29,6 +31,7 @@ passport.use(new LocalStrategy({
           message: 'Incorrect password.'
         });
       }
+
       return done(null, user);
     });
   }

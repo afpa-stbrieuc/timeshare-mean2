@@ -33,8 +33,8 @@
     })
     .when('/register', {
       templateUrl: 'views/signUp.html',
-      controller: 'SignUpCtrl',
-      controllerAs: 'signUp'
+      controller: 'RegisterCtrl',
+      controllerAs: 'register'
     })
     .when('/about', {
       templateUrl: 'views/about.html',

@@ -1,10 +1,17 @@
 'use strict';
-angular.module('timeShareApp')
-  .controller('SearchCtrl', ['$route', '$routeParams', '$location', '$scope',
-    function($route, $routeParams, $location, $scope) {
-      this.$route = $route;
+(function() {
+  angular
+  .module('timeShareApp')
+  .controller('SearchCtrl', searchCtrl);
+
+    searchCtrl.$inject = ['$route', '$routeParams', '$location', '$scope'];
+
+  function searchCtrl($route, $routeParams, $location, $scope) {
+      var search = this;
+
+    this.$route = $route;
       this.$location = $location;
       this.$routeParams = $routeParams;
       $scope.message = 'Hello from search page!';
-    }
-  ]);
+  }
+})();

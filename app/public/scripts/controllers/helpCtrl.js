@@ -5,6 +5,6 @@ angular.module('timeShareApp')
 			this.$route = $route;
 			this.$location = $location;
 			this.$routeParams = $routeParams;
-			$scope.message = 'Hello from help page!';
+			$scope.message = 'Hello from Frequently Asked Questions page!';
 		}
 	]);
