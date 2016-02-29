@@ -1,5 +1,6 @@
 'use strict';
-angular.module('timeShareApp')
+angular
+.module('timeShareApp')
   .controller('AboutCtrl', ['$route', '$routeParams', '$location', '$scope',
     function($route, $routeParams, $location, $scope) {
       this.$route = $route;
