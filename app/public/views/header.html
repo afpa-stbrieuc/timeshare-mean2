@@ -16,7 +16,7 @@
                     <img class="navbar-brand" alt="Logo" src="/images/logo3_transparent.png"/>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li ng-class="{ active: isActive('/') || isActive('/home')}"><a xref="/#" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-home"></span> Home<span class="sr-only">(current)</span></a></li>
+                    <li ng-class="{ active: isActive('/')}"><a xref="/#" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-home"></span> Home<span class="sr-only">(current)</span></a></li>
                     <li ng-class="{ active: isActive('/howItWorks')}"><a xref="/howItWorks" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-dashboard"></span> How it works?<span class="sr-only">(current)</span></a></li>
                     <li><a href="/##scrollToSearch" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-search"></span> Search<span class="sr-only"></span></a></li>
                     <li ng-class="{ active: isActive('/help')}"><a xref="/help" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-question-sign"></span> FAQ<span class="sr-only">(current)</span></a></li>
@@ -27,7 +27,7 @@
                             <a xref="/register" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
                         </li>
                         <li ng-show="headvm.isLoggedIn">
-                            <a xref="/home" ng-click="headvm.logout()" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-log-out"></span> Logout : {{headvm.currentUser.lastnNme }} {{headvm.currentUser.firstName}}</a>
+                            <a ng-click="headvm.logout()" class="btn animated_btn navbar-btn"><span class="glyphicon glyphicon-log-out"></span> Logout : {{headvm.currentUser.lastnNme }} {{headvm.currentUser.firstName}}</a>
                         </li>
                         <li class="dropdown" id="menuLogin" ng-hide="headvm.isLoggedIn">
                             <a class="dropdown-toggle btn animated_btn navbar-btn" data-toggle="dropdown" id="navLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a>

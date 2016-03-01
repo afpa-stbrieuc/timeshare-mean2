@@ -21,7 +21,7 @@
       password: ''
     };
 
-    login.returnPage = $location.search().page || '/';
+    login.returnPage = $location.search().page || '/home';
 
     login.onSubmit = function() {
       console.log('kikou');
