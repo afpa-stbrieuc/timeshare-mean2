@@ -31,6 +31,14 @@
       $location.path('/');
     };
 
+    $scope.rowCollection = [
+      {firstName: 'Laurent', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com'},
+      {firstName: 'Blandine', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com'},
+      {firstName: 'Francoise', lastName: 'Frere', birthDate: new Date('1955-08-27'), balance: 42343, email: 'raymondef@gmail.com'}
+    ];
+
+    $scope.onlyNumbers = /^[0-9]+$/;
+
     $scope.updateRegion = function(){
       console.log($scope.regionSelected);
     };
@@ -84,7 +92,50 @@
       'Baby-sitting - GARDE D_ENFANT',
       'Baby-sitting - ACCOMPAGNEMENT ÉCOLE OU ACTIVITÉ',
       'Baby-sitting - AUTRES',
-      '-------------------------------------------------'];
+      '-------------------------------------------------',
+      'Animaux - GARDE D_ANIMAUX',
+      'Animaux - PROMENADE D_ANIMAUX',
+      'Animaux - TOILETTAGE',
+      'Animaux - AUTRES',
+      '-------------------------------------------------',
+      'Automobile - VIDANGE',
+      'Automobile - NETTOYAGE',
+      'Automobile - CHANGEMENT DE PIECES',
+      'Automobile - AUTRES',
+      '-------------------------------------------------',
+      'Cours particuliers - MUSIQUE',
+      'Cours particuliers - LANGUES',
+      'Cours particuliers - MATIERS SCIENTIFIQUES',
+      'Cours particuliers - AUTRES',
+      '-------------------------------------------------',
+      'Coaching / Conseils - SPORT',
+      'Coaching / Conseils - CUISINE',
+      'Coaching / Conseils - DECO',
+      'Coaching / Conseils - JEUX',
+      'Coaching / Conseils - AUTRES',
+      '-------------------------------------------------',
+      'Soins beauté - MASSAGE',
+      'Soins beauté - COIFFURE',
+      'Soins beauté - MANUCURE',
+      'Soins beauté - EPILATION',
+      'Soins beauté - AUTRES',
+      '-------------------------------------------------',
+      'Courses - FAIRE LES COURSES A PARTIR D_UNE LISTE',
+      'Courses - DEMARCHES ADMINISTATIVES',
+      'Courses - AUTRES',
+      '-------------------------------------------------',
+      'Absences / Vacances - ARROSER LE JARDIN',
+      'Absences / Vacances - EFFECTUER DES RONDES',
+      'Absences / Vacances - AUTRES',
+      '-------------------------------------------------',
+      'Informatique - RESOLUTION DE PROBLEMES',
+      'Informatique - REDACTION DE DOCUMENTS',
+      'Informatique - AUTRES',
+      '-------------------------------------------------',
+      'Festivités - ANIMATION MUSICALE',
+      'Festivités - AIDE A LA PREPARATION D_UNE FETE',
+      'Festivités - AUTRES'
+    ];
 
 
   }
