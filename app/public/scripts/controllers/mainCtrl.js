@@ -31,6 +31,13 @@
       $location.path('/');
     };
 
+    $scope.searchAds = function() {
+      var region = $scope.regionSelected;
+      var department = $scope.departmentSelected;
+      var codePostal = $scope.cdPostal;
+      var skill = $scope.skillSelected;
+      console.log(region + ' ' + department + ' ' + codePostal + ' ' + skill);
+    }
     $scope.rowCollection = [
       {firstName: 'Laurent', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com'},
       {firstName: 'Blandine', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com'},
@@ -43,9 +50,17 @@
       console.log($scope.regionSelected);
     };
 
+    $scope.updateCodePostal = function() {
+      console.log($scope.cdPostal);
+    }
+
     $scope.updateDepartment = function(){
       console.log($scope.departmentSelected);
     };
+
+    $scope.updateSkill = function() {
+      console.log($scope.skillSelected);
+    }
 
     $scope.france = {
       'Alsace' : ['Bas-Rhin', 'Haut-Rhin'],
