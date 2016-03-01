@@ -62,7 +62,7 @@
         </div>
         <div class="col-sm-2">
             <div class="form-group">
-                <input type="text" class="form-control" name="cdPostal" ng-pattern="onlyNumbers" placeholder="Enter zip code">
+                <input type="text" ng-change="updateCodePostal(cdPostal)" class="form-control" data-ng-model="cdPostal" ng-pattern="onlyNumbers" placeholder="Enter zip code">
             </div>
         </div>
         <div class="col-sm-3">
@@ -73,7 +73,7 @@
             </select>
         </div>
         <div class="col-sm-1">
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" ng-click="searchAds()" class="btn">Submit</button>
         </div>
     </div>
 </div>
