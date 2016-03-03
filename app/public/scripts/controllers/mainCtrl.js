@@ -32,21 +32,33 @@
     };
 
     $scope.searchAds = function() {
-      var region = $scope.regionSelected;
-      var department = $scope.departmentSelected;
-      var codePostal = $scope.cdPostal;
-      var skill = $scope.skillSelected;
-      console.log(region + ' ' + department + ' ' + codePostal + ' ' + skill);
-    }
+      if ($scope.regionSelected != undefined && $scope.departmentSelected != undefined
+        && $scope.cdPostal != undefined && $scope.skillSelected != undefined) {
+        console.log($scope.regionSelected + ' ' +  $scope.departmentSelected + ' ' +  $scope.cdPostal + ' ' +  $scope.skillSelected);
+      }
+      else if($scope.regionSelected === undefined) {
+        console.log('You must select region');
+      }
+      else if($scope.departmentSelected === undefined) {
+        console.log('You must select department');
+      }
+      else if($scope.cdPostal === undefined) {
+        console.log('You must enter postal code');
+      }
+      else if($scope.skillSelected === undefined) {
+        console.log('You must select skill');
+      }
+    };
+
     $scope.rowCollection = [
-      {firstName: 'Laurent', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com'},
-      {firstName: 'Blandine', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com'},
-      {firstName: 'Francoise', lastName: 'Frere', birthDate: new Date('1955-08-27'), balance: 42343, email: 'raymondef@gmail.com'}
+      {firstName: 'Laurent', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com', region: 'Bretagne'},
+      {firstName: 'Blandine', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com', region: 'Alsace'},
+      {firstName: 'Francoise', lastName: 'Frere', birthDate: new Date('1955-08-27'), balance: 42343, email: 'raymondef@gmail.com', region: 'Bretagne'}
     ];
 
     $scope.onlyNumbers = /^[0-9]+$/;
 
-    $scope.updateRegion = function(){
+   /* $scope.updateRegion = function(){
       console.log($scope.regionSelected);
     };
 
@@ -60,7 +72,7 @@
 
     $scope.updateSkill = function() {
       console.log($scope.skillSelected);
-    }
+    }*/
 
     $scope.france = {
       'Alsace' : ['Bas-Rhin', 'Haut-Rhin'],
@@ -88,71 +100,20 @@
       'Rhône-Alpes' : ['Ain', 'Ardèche', 'Drôme', 'Isère', 'Loire', 'Rhône', 'Savoie', 'Haute-Savoie']
     };
 
-    $scope.skillSet = [
-      'Travaux et entretien habitat - JARDINAGE',
-      'Travaux et entretien habitat - PEINTURE',
-      'Travaux et entretien habitat - MAÇONNERIE',
-      'Travaux et entretien habitat - PLOMBERIE',
-      'Travaux et entretien habitat - ELECTRICITÉ',
-      'Travaux et entretien habitat - AUTRES',
-      '-------------------------------------------------',
-      'Bricolage - MONTER UN MEUBLE EN KIT',
-      'Bricolage - REPARATIONS',
-      'Bricolage - PETITS TRAVAUX MANUELS',
-      'Bricolage - AUTRES',
-      '-------------------------------------------------',
-      'Déménagement - AIDE DÉMÉNAGEMENT',
-      'Déménagement - AUTRES',
-      '-------------------------------------------------',
-      'Baby-sitting - GARDE D_ENFANT',
-      'Baby-sitting - ACCOMPAGNEMENT ÉCOLE OU ACTIVITÉ',
-      'Baby-sitting - AUTRES',
-      '-------------------------------------------------',
-      'Animaux - GARDE D_ANIMAUX',
-      'Animaux - PROMENADE D_ANIMAUX',
-      'Animaux - TOILETTAGE',
-      'Animaux - AUTRES',
-      '-------------------------------------------------',
-      'Automobile - VIDANGE',
-      'Automobile - NETTOYAGE',
-      'Automobile - CHANGEMENT DE PIECES',
-      'Automobile - AUTRES',
-      '-------------------------------------------------',
-      'Cours particuliers - MUSIQUE',
-      'Cours particuliers - LANGUES',
-      'Cours particuliers - MATIERS SCIENTIFIQUES',
-      'Cours particuliers - AUTRES',
-      '-------------------------------------------------',
-      'Coaching / Conseils - SPORT',
-      'Coaching / Conseils - CUISINE',
-      'Coaching / Conseils - DECO',
-      'Coaching / Conseils - JEUX',
-      'Coaching / Conseils - AUTRES',
-      '-------------------------------------------------',
-      'Soins beauté - MASSAGE',
-      'Soins beauté - COIFFURE',
-      'Soins beauté - MANUCURE',
-      'Soins beauté - EPILATION',
-      'Soins beauté - AUTRES',
-      '-------------------------------------------------',
-      'Courses - FAIRE LES COURSES A PARTIR D_UNE LISTE',
-      'Courses - DEMARCHES ADMINISTATIVES',
-      'Courses - AUTRES',
-      '-------------------------------------------------',
-      'Absences / Vacances - ARROSER LE JARDIN',
-      'Absences / Vacances - EFFECTUER DES RONDES',
-      'Absences / Vacances - AUTRES',
-      '-------------------------------------------------',
-      'Informatique - RESOLUTION DE PROBLEMES',
-      'Informatique - REDACTION DE DOCUMENTS',
-      'Informatique - AUTRES',
-      '-------------------------------------------------',
-      'Festivités - ANIMATION MUSICALE',
-      'Festivités - AIDE A LA PREPARATION D_UNE FETE',
-      'Festivités - AUTRES'
-    ];
-
-
+    $scope.skillSet = {
+      'Travaux et entretien habitat' : ['JARDINAGE', 'PEINTURE', 'MAÇONNERIE', 'PLOMBERIE', 'ELECTRICITÉ', 'AUTRES'],
+      'Bricolage' : ['MONTER UN MEUBLE EN KIT', 'REPARATIONS', 'PETITS TRAVAUX MANUELS', 'AUTRES'],
+      'Déménagement': ['AIDE DÉMÉNAGEMENT', 'AUTRES'],
+      'Baby-sitting': ['GARDE', 'ACCOMPAGNEMENT ÉCOLE OU ACTIVITÉ', 'AUTRES'],
+      'Animaux': ['GARDE', 'PROMENADE', 'TOILETTAGE', 'AUTRES'],
+      'Automobile': ['VIDANGE', 'NETTOYAGE', 'CHANGEMENT DE PIECES', 'AUTRES'],
+      'Cours particuliers': ['MUSIQUE', 'LANGUES', 'MATIERS SCIENTIFIQUES', 'AUTRES'],
+      'Coaching / Conseils': ['SPORT', 'CUISINE', 'DECO', 'JEUX', 'AUTRES'],
+      'Soins beauté': ['MASSAGE', 'COIFFURE', 'MANUCURE', 'EPILATION', 'AUTRES'],
+      'Courses': ['FAIRE LES COURSES A PARTIR D_UNE LISTE', 'DEMARCHES ADMINISTATIVES', 'AUTRES'],
+      'Absences / Vacances': ['ARROSER LE JARDIN', 'EFFECTUER DES RONDES', 'AUTRES'],
+      'Informatique': ['DEVELOPPEMENT', 'RESOLUTION DE PROBLEMES', 'REDACTION DE DOCUMENTS', 'AUTRES'],
+      'Festivités': ['ANIMATION MUSICALE', 'AIDE A LA PREPARATION D_UNE FETE', 'AUTRES']
+    };
   }
-
 })();
