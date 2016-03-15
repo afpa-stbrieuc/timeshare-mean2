@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/afpa-stbrieuc/timeshare-mean2.svg?branch=gruntify)](https://travis-ci.org/afpa-stbrieuc/timeshare-mean2)
 
+- Project temporarily in pause but it will be continued.
+- Projet temporairement en pause, mais il sera poursuivi.
+
 ##prerequisite
 install softwares
 - nodejs server 4.2.5 lts
