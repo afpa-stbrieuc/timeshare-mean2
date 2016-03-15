@@ -28,12 +28,12 @@
     console.log('headvm : ', vm.currentUser, vm.isLoggedIn);
     vm.logout = function() {
       authentication.logout();
-      $location.path('/');
+      $location.path('xref');
     };
 
     $scope.searchAds = function() {
-      if ($scope.regionSelected != undefined && $scope.departmentSelected != undefined
-        && $scope.cdPostal != undefined && $scope.skillSelected != undefined) {
+      if ($scope.regionSelected !== undefined && $scope.departmentSelected !== undefined
+        && $scope.cdPostal !== undefined && $scope.skillSelected !== undefined) {
         console.log($scope.regionSelected + ' ' +  $scope.departmentSelected + ' ' +  $scope.cdPostal + ' ' +  $scope.skillSelected);
       }
       else if($scope.regionSelected === undefined) {
